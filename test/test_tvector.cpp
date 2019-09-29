@@ -63,17 +63,21 @@ TEST(TVector, can_set_and_get_element)
 
 TEST(TVector, throws_when_set_element_with_negative_index)
 {
-  ADD_FAILURE();
+	TVector<int> v(4);
+
+	ASSERT_ANY_THROW(v[-7] = -7);
 }
 
 TEST(TVector, throws_when_set_element_with_too_large_index)
 {
-  ADD_FAILURE();
+	TVector<int> v(4);
+
+	ASSERT_ANY_THROW(v[MAX_VECTOR_SIZE + 1] = -7);
 }
 
 TEST(TVector, can_assign_vector_to_itself)
 {
-  ADD_FAILURE();
+  ADD_FAILURE(); // оператор присваивания?
 }
 
 TEST(TVector, can_assign_vectors_of_equal_size)
@@ -93,17 +97,32 @@ TEST(TVector, can_assign_vectors_of_different_size)
 
 TEST(TVector, compare_equal_vectors_return_true)
 {
-  ADD_FAILURE();
+	TVector<int> v1(4);
+	
+	for (int i = 0; i < 4; i++)
+		v1[i] = i;
+
+	TVector<int> v2(v1);
+
+	EXPECT_EQ(true, v1 == v2);
 }
 
 TEST(TVector, compare_vector_with_itself_return_true)
 {
-  ADD_FAILURE();
+	TVector<int> v1(4);
+
+	for (int i = 0; i < 4; i++)
+		v1[i] = i;
+
+	EXPECT_EQ(true, v1 == v1);
 }
 
 TEST(TVector, vectors_with_different_size_are_not_equal)
 {
-  ADD_FAILURE();
+	TVector<int> v1(4);
+	TVector<int> v2(8);
+
+	EXPECT_EQ(true, v1 != v2);
 }
 
 TEST(TVector, can_add_scalar_to_vector)
