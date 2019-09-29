@@ -181,17 +181,50 @@ TVector<ValType> TVector<ValType>::operator*(const ValType &val)
 template <class ValType> // сложение
 TVector<ValType> TVector<ValType>::operator+(const TVector<ValType> &v)
 {
-} /*-------------------------------------------------------------------------*/
+	if (Size == v.Size)
+	{
+		TVector<ValType> Result(*this);
+
+		for (int i = 0; i < Size; i++)
+			Result.pVector[i] += v.pVector[i];
+
+		return Result;
+	}
+	else
+		throw exception("Not equal vectors");
+} 
 
 template <class ValType> // вычитание
 TVector<ValType> TVector<ValType>::operator-(const TVector<ValType> &v)
 {
-} /*-------------------------------------------------------------------------*/
+	if (Size == v.Size)
+	{
+		TVector<ValType> Result(*this);
+
+		for (int i = 0; i < Size; i++)
+			Result.pVector[i] -= v.pVector[i];
+
+		return Result;
+	}
+	else
+		throw exception("Not equal vectors");
+} 
 
 template <class ValType> // скалярное произведение
 ValType TVector<ValType>::operator*(const TVector<ValType> &v)
 {
-} /*-------------------------------------------------------------------------*/
+	if (Size == v.Size)
+	{
+		ValType Result = 0;
+
+		for (int i = 0; i < Size; i++)
+			Result += pVector[i] * v.pVector[i];
+
+		return Result;
+	}
+	else
+		throw exception("Not equal vectors");
+} 
 
 
 // Верхнетреугольная матрица
