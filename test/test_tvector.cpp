@@ -127,17 +127,50 @@ TEST(TVector, vectors_with_different_size_are_not_equal)
 
 TEST(TVector, can_add_scalar_to_vector)
 {
-  ADD_FAILURE();
+	TVector<int> v1(5);
+	TVector<int> v2(5);
+
+	int Scalar = 7;
+
+	for (int i = 0; i < v1.GetSize(); i++)
+		v1[i] = i;
+
+	for (int i = 0; i < v2.GetSize(); i++)
+		v2[i] = i + Scalar;
+
+	EXPECT_EQ(v2, v1 + Scalar);
 }
 
 TEST(TVector, can_subtract_scalar_from_vector)
 {
-  ADD_FAILURE();
+	TVector<int> v1(5);
+	TVector<int> v2(5);
+
+	int Scalar = 7;
+
+	for (int i = 0; i < v1.GetSize(); i++)
+		v1[i] = i;
+
+	for (int i = 0; i < v2.GetSize(); i++)
+		v2[i] = i - Scalar;
+
+	EXPECT_EQ(v2, v1 - Scalar);
 }
 
 TEST(TVector, can_multiply_scalar_by_vector)
 {
-  ADD_FAILURE();
+	TVector<int> v1(5);
+	TVector<int> v2(5);
+
+	int Scalar = 7;
+
+	for (int i = 0; i < v1.GetSize(); i++)
+		v1[i] = i;
+
+	for (int i = 0; i < v2.GetSize(); i++)
+		v2[i] = i * Scalar;
+
+	EXPECT_EQ(v2, v1 * Scalar);
 }
 
 TEST(TVector, can_add_vectors_with_equal_size)
