@@ -117,12 +117,20 @@ TEST(TVector, can_assign_vectors_of_equal_size)
 
 TEST(TVector, assign_operator_change_vector_size)
 {
-  ADD_FAILURE();
+	TVector<int> v1(5);
+	TVector<int> v2(7);
+
+	v2 = v1;
+
+	EXPECT_EQ(v1.GetSize(), v2.GetSize());
 }
 
 TEST(TVector, can_assign_vectors_of_different_size)
 {
-  ADD_FAILURE();
+	TVector<int> v1(5);
+	TVector<int> v2(7);
+
+	ASSERT_NO_THROW(v2 = v1);
 }
 
 TEST(TVector, compare_equal_vectors_return_true)
