@@ -1,0 +1,5 @@
+﻿P:\Visual Studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: промежуточный каталог (Debug\) содержит файлы, которые используются совместно с другим проектом (gtest.vcxproj, test_utmatrix.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+cl : командная строка warning D9035: использование параметра "Gm" нежелательно, он будет удален в следующих выпусках
+  sample_matrix.cpp
+sample_matrix.obj : warning LNK4075: не учитывается "/EDITANDCONTINUE" из-за спецификации "/SAFESEH"
+  sample_utmatrix.vcxproj -> C:\Users\petro\Desktop\proj\mp2labs\mp2-lab2-matrix\sln\vc10\Debug\sample_utmatrix.exe

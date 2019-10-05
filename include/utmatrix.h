@@ -70,7 +70,7 @@ TVector<ValType>::TVector(int s, int si)
 		pVector = new ValType[Size];
 
 		for (int i = 0; i < Size; i++)
-			pVector[i] = si;
+			pVector[i] = si + 1;
 	}
 	else throw out_of_range("Wrong Size or Startindex");
 }
@@ -297,7 +297,7 @@ TMatrix<ValType>& TMatrix<ValType>::operator=(const TMatrix<ValType> &mt)
 		Size = mt.Size;
 
 		delete[] pVector;
-		pVector = new ValType[Size];
+		pVector = new TVector<ValType>[Size];
 
 		for (int i = 0; i < Size; i++)
 			pVector[i] = mt.pVector[i];
@@ -309,12 +309,34 @@ TMatrix<ValType>& TMatrix<ValType>::operator=(const TMatrix<ValType> &mt)
 template <class ValType> // сложение
 TMatrix<ValType> TMatrix<ValType>::operator+(const TMatrix<ValType> &mt)
 {
-} /*-------------------------------------------------------------------------*/
+	if (Size == mt.Size)
+	{
+		TMatrix<ValType> Result(Size);
+
+		for (int i = 0; i < Size; i++)
+			Result.pVector[i] = pVector[i] + mt.pVector[i];
+
+		return Result;
+	}
+	else
+		throw exception("Not equal size");
+} 
 
 template <class ValType> // вычитание
 TMatrix<ValType> TMatrix<ValType>::operator-(const TMatrix<ValType> &mt)
 {
-} /*-------------------------------------------------------------------------*/
+	if (Size == mt.Size)
+	{
+		TMatrix<ValType> Result(Size);
+
+		for (int i = 0; i < Size; i++)
+			Result.pVector[i] = pVector[i] - mt.pVector[i];
+
+		return Result;
+	}
+	else
+		throw exception("Not equal size");
+} 
 
 // TVector О3 Л2 П4 С6
 // TMatrix О2 Л2 П3 С3
