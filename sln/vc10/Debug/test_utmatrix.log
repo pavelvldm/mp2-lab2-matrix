@@ -1,4 +1,4 @@
-﻿P:\Visual Studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: промежуточный каталог (Debug\) содержит файлы, которые используются совместно с другим проектом (gtest.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+﻿P:\Visual Studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: промежуточный каталог (Debug\) содержит файлы, которые используются совместно с другим проектом (gtest.vcxproj, sample_utmatrix.vcxproj).  Это может привести к ошибкам очистки и перестроения.
 cl : командная строка warning D9035: использование параметра "Gm" нежелательно, он будет удален в следующих выпусках
   test_tmatrix.cpp
 c:\users\petro\desktop\proj\mp2labs\mp2-lab2-matrix\gtest\gtest.h(9690): warning C4996: 'std::tr1': warning STL4002: The non-Standard std::tr1 namespace and TR1-only machinery are deprecated and will be REMOVED. You can define _SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING to acknowledge that you have received this warning.
@@ -102,5 +102,5 @@ c:\users\petro\desktop\proj\mp2labs\mp2-lab2-matrix\gtest\gtest.h(10020): warnin
           [
               T=std::tuple<>
           ]
-P:\Visual Studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: промежуточный каталог (Debug\) содержит файлы, которые используются совместно с другим проектом (test_utmatrix.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+P:\Visual Studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: промежуточный каталог (Debug\) содержит файлы, которые используются совместно с другим проектом (sample_utmatrix.vcxproj, test_utmatrix.vcxproj).  Это может привести к ошибкам очистки и перестроения.
   test_utmatrix.vcxproj -> C:\Users\petro\Desktop\proj\mp2labs\mp2-lab2-matrix\sln\vc10\Debug\test_utmatrix.exe
